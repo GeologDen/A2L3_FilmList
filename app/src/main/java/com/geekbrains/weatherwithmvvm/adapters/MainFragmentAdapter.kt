@@ -13,6 +13,7 @@ class MainFragmentAdapter(private val itemClickListener: OnItemViewClickListener
     private var movieCardData: List<movieCard> = listOf()
     private lateinit var binding: ItemListCitiesBinding
 
+    //Просто сделан замену имен переменных
     fun setWeather(data: List<movieCard>) {
         movieCardData = data
         notifyDataSetChanged()

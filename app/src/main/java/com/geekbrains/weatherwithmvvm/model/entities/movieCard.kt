@@ -2,7 +2,7 @@ package com.geekbrains.weatherwithmvvm.model.entities
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
-
+//Просто сделан замену имен переменных и типов данных.
 @Parcelize
 data class movieCard(
     val movie: Movie = getDefaultMovie(),
