@@ -5,7 +5,7 @@ import com.geekbrains.weatherwithmvvm.model.AppState
 import com.geekbrains.weatherwithmvvm.model.Repository
 import com.geekbrains.weatherwithmvvm.model.RepositoryImpl
 import java.lang.Thread.sleep
-
+//Просто сделан замену имен переменных
 class MainViewModel(private val liveDataToObserve: MutableLiveData<AppState> = MutableLiveData())
     : ViewModel(), LifecycleObserver {
     private val repository: Repository = RepositoryImpl()

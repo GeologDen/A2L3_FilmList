@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.geekbrains.weatherwithmvvm.R
 import com.geekbrains.weatherwithmvvm.databinding.FragmentDetailsBinding
 import com.geekbrains.weatherwithmvvm.model.entities.movieCard
-
+//Просто сделан замену имен переменных
 @Suppress("NAME_SHADOWING")
 class DetailsFragment : Fragment() {
     private lateinit var binding: FragmentDetailsBinding

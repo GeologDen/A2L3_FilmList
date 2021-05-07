@@ -14,7 +14,7 @@ import com.geekbrains.weatherwithmvvm.model.entities.movieCard
 import com.geekbrains.weatherwithmvvm.model.interfaces.OnItemViewClickListener
 import com.geekbrains.weatherwithmvvm.ui.details.DetailsFragment
 import com.google.android.material.snackbar.Snackbar
-
+//Просто сделан замену имен переменных
 class MainFragment : Fragment() {
 
     private var _binding: MainFragmentBinding? = null

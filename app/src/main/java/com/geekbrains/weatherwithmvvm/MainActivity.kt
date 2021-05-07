@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.geekbrains.weatherwithmvvm.databinding.MainActivityBinding
 import com.geekbrains.weatherwithmvvm.ui.details.DetailsFragment
 import com.geekbrains.weatherwithmvvm.ui.main.MainFragment
-
+//Просто сделан замену имен переменных
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: MainActivityBinding
 
