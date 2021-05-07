@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">WeatherWithMVVM</string>
+    <string name="film_genre_label">Жанр:</string>
+    <string name="movie_duration_label">Продолжительность:</string>
+    <string name="movie_year_rating_label">Год: %s, \nРейтинг: %s \u2B50"</string>
+    <string name="switcher_of_movies">Switcher of movies</string>
+    <string name="error">Error</string>
+    <string name="reload">Reload</string>
+</resources>
