@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.geekbrains.weatherwithmvvm.R
 import com.geekbrains.weatherwithmvvm.adapters.MainFragmentAdapter
@@ -12,9 +13,10 @@ import com.geekbrains.weatherwithmvvm.databinding.MainFragmentBinding
 import com.geekbrains.weatherwithmvvm.model.AppState
 import com.geekbrains.weatherwithmvvm.model.entities.movieCard
 import com.geekbrains.weatherwithmvvm.model.interfaces.OnItemViewClickListener
+import com.geekbrains.weatherwithmvvm.model.showSnackBar
 import com.geekbrains.weatherwithmvvm.ui.details.DetailsFragment
 import com.google.android.material.snackbar.Snackbar
-//Просто сделан замену имен переменных
+
 class MainFragment : Fragment() {
 
     private var _binding: MainFragmentBinding? = null
@@ -26,24 +28,24 @@ class MainFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = MainFragmentBinding.inflate(inflater, container, false)
-        return binding.getRoot()
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.mainFragmentRecyclerView.adapter = adapter
-        binding.mainFragmentFAB.setOnClickListener { changeWeatherDataSet() }
+        binding.mainFragmentFAB.setOnClickListener { changeMovieDataSet() }
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         viewModel.getLiveData().observe(viewLifecycleOwner, { renderData(it) })
-        viewModel.getWeatherFromLocalSourceRus()
+        viewModel.getMovieFromLocalSourceRus()
     }
 
-    private fun changeWeatherDataSet() = with(binding) {
+    private fun changeMovieDataSet() = with(binding) {
         if (isDataSetRus) {
-            viewModel.getWeatherFromLocalSourceWorld()
+            viewModel.getMovieFromLocalSourceWorld()
             mainFragmentFAB.setImageResource(R.drawable.ic_earth)
         } else {
-            viewModel.getWeatherFromLocalSourceRus()
+            viewModel.getMovieFromLocalSourceRus()
             mainFragmentFAB.setImageResource(R.drawable.ic_russia)
         }
         isDataSetRus = !isDataSetRus
@@ -78,16 +80,16 @@ class MainFragment : Fragment() {
             }
             is AppState.Error -> {
                 mainFragmentLoadingLayout.visibility = View.GONE
-                Snackbar
-                        .make(mainFragmentFAB, getString(R.string.error), Snackbar.LENGTH_INDEFINITE)
-                        .setAction(getString(R.string.reload)) { viewModel.getWeatherFromLocalSourceRus() }
-                        .show()
+                mainFragmentFAB.showSnackBar(
+                        getString(R.string.error),
+                        getString(R.string.reload),
+                        { viewModel.getMovieFromLocalSourceRus() }
+                )
             }
         }
     }
 
     companion object {
-        fun newInstance() =
-                MainFragment()
+        fun newInstance() = MainFragment()
     }
 }

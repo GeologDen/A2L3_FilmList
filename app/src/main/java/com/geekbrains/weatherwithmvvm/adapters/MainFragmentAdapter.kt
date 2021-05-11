@@ -13,7 +13,6 @@ class MainFragmentAdapter(private val itemClickListener: OnItemViewClickListener
     private var movieCardData: List<movieCard> = listOf()
     private lateinit var binding: ItemListCitiesBinding
 
-    //Просто сделан замену имен переменных
     fun setWeather(data: List<movieCard>) {
         movieCardData = data
         notifyDataSetChanged()
@@ -31,9 +30,7 @@ class MainFragmentAdapter(private val itemClickListener: OnItemViewClickListener
         holder.bind(movieCardData[position])
     }
 
-    override fun getItemCount(): Int {
-        return movieCardData.size
-    }
+    override fun getItemCount() = movieCardData.size
 
     inner class MainViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 

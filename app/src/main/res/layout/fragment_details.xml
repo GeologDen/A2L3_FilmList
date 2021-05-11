@@ -60,7 +60,7 @@
             app:layout_constraintTop_toBottomOf="@+id/cityCoordinates" />
 
         <TextView
-            android:id="@+id/temperatureValue"
+            android:id="@+id/movieGenre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -73,7 +73,7 @@
             tools:text="Фэнтези" />
 
         <TextView
-            android:id="@+id/feelsLikeLabel"
+            android:id="@+id/monieDuration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/description_marginTop"
@@ -81,8 +81,8 @@
             android:textSize="@dimen/descriptionTextSize"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/temperatureValue"
-            app:layout_constraintTop_toBottomOf="@+id/temperatureValue" />
+            app:layout_constraintStart_toStartOf="@+id/movieGenre"
+            app:layout_constraintTop_toBottomOf="@+id/movieGenre" />
 
         <TextView
             android:id="@+id/feelsLikeValue"
@@ -93,8 +93,8 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/feelsLikeLabel"
-            app:layout_constraintTop_toBottomOf="@+id/feelsLikeLabel"
+            app:layout_constraintStart_toStartOf="@+id/monieDuration"
+            app:layout_constraintTop_toBottomOf="@+id/monieDuration"
             tools:text="108" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

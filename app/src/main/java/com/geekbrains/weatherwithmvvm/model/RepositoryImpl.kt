@@ -3,7 +3,7 @@ package com.geekbrains.weatherwithmvvm.model
 import com.geekbrains.weatherwithmvvm.model.entities.movieCard
 import com.geekbrains.weatherwithmvvm.model.entities.getRussianMovies
 import com.geekbrains.weatherwithmvvm.model.entities.getWorldMovies
-//Просто сделан замену имен переменных
+
 class RepositoryImpl : Repository {
     override fun getWeatherFromServer() = movieCard()
     override fun getWeatherFromLocalStorageRus() = getRussianMovies()
