@@ -1,5 +1,4 @@
 <resources>
-    //Поигрался с тегами в строке Год/Рейтинг
     <string name="app_name">WeatherWithMVVM</string>
     <string name="film_genre_label">Жанр:</string>
     <string name="movie_duration_label">Продолжительность:</string>
