@@ -30,9 +30,7 @@ class MainFragmentAdapter(private val itemClickListener: OnItemViewClickListener
         holder.bind(movieCardData[position])
     }
 
-    override fun getItemCount(): Int {
-        return movieCardData.size
-    }
+    override fun getItemCount() = movieCardData.size
 
     inner class MainViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 

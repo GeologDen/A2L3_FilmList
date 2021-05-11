@@ -6,6 +6,7 @@ import com.geekbrains.weatherwithmvvm.model.Repository
 import com.geekbrains.weatherwithmvvm.model.RepositoryImpl
 import java.lang.Thread.sleep
 
+//Просто сделан замену имен переменных
 class MainViewModel(private val liveDataToObserve: MutableLiveData<AppState> = MutableLiveData())
     : ViewModel(), LifecycleObserver {
     private val repository: Repository = RepositoryImpl()
@@ -13,14 +14,14 @@ class MainViewModel(private val liveDataToObserve: MutableLiveData<AppState> = M
 
     fun getLiveData() = liveDataToObserve
 
-    fun getWeatherFromLocalSourceRus() = getDataFromLocalSource(true)
+    fun getMovieFromLocalSourceRus() = getDataFromLocalSource(true)
 
-    fun getWeatherFromLocalSourceWorld() = getDataFromLocalSource(isRussian = false)
+    fun getMovieFromLocalSourceWorld() = getDataFromLocalSource(isRussian = false)
 
     fun getWeatherFromRemoteSource() = getDataFromLocalSource(isRussian = true)
 
     fun getData(): LiveData<AppState> {
-        getWeatherFromLocalSourceRus()
+        getMovieFromLocalSourceRus()
         return liveDataToObserve
     }
 
@@ -34,7 +35,6 @@ class MainViewModel(private val liveDataToObserve: MutableLiveData<AppState> = M
                     if (isRussian) repository.getWeatherFromLocalStorageRus()
                     else repository.getWeatherFromLocalStorageWorld())
             )
-            //liveDataToObserve.postValue(AppState.Error())
         }.start()
     }
 

@@ -24,16 +24,18 @@ class DetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val movieCard = arguments?.getParcelable<movieCard>(BUNDLE_EXTRA)
-        movieCard?.let { movieCard1 ->
-            val movie = movieCard1.movie
-            binding.cityName.text = movie.film
-            binding.cityCoordinates.text = String.format(
-                    getString(R.string.movie_year_rating_label),
-                    movie.releaseYear.toString(),
-                    movie.movieRating.toString()
-            )
-            binding.temperatureValue.text = movieCard1.filmGenre
-            binding.feelsLikeValue.text = movieCard1.filmDuration.toString()
+        movieCard?.let {
+            with(binding) {
+                val movie = it.movie
+                cityName.text = movie.film
+                cityCoordinates.text = String.format(
+                        getString(R.string.movie_year_rating_label),
+                        movie.releaseYear.toString(),
+                        movie.movieRating.toString()
+                )
+                movieGenre.text = it.filmGenre
+                monieDuration.text = it.filmDuration.toString()
+            }
         }
     }
 
